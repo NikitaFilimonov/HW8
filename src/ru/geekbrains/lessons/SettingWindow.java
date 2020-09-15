@@ -63,6 +63,8 @@ public class SettingWindow extends JFrame {
         });
 
         JButton buttonStartGame = new JButton("Start a game");
+        buttonStartGame.setBackground(Color.RED);
+        buttonStartGame.setForeground(Color.WHITE);
         add(buttonStartGame);
         buttonStartGame.addActionListener(e -> {
             int mode;

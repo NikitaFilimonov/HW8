@@ -4,8 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Logic {
-    static int SIZE = 5;
-    static int DOTS_TO_WIN = 4;
+    static int SIZE;
+    static int DOTS_TO_WIN;
 
     static final char DOT_X = 'X';
     static final char DOT_O = 'O';

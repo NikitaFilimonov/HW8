@@ -23,7 +23,7 @@ public class BattleField extends JPanel {
     public BattleField(GameWindow gameWindow) {
         this.gameWindow = gameWindow; //передаем ссылку на класс gameWindow
 
-        setBackground(Color.ORANGE);
+        setBackground(Color.LIGHT_GRAY);
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -69,11 +69,13 @@ public class BattleField extends JPanel {
 
         for (int i = 0; i < fieldSize; i++) {
             int y = i * cellHeight;
+            ((Graphics2D) g).setStroke(new BasicStroke(2));
             g.drawLine(0, y, getWidth(), y);
         }
 
         for (int i = 0; i < fieldSize; i++) {
             int x = i * cellWidth;
+            ((Graphics2D) g).setStroke(new BasicStroke(2));
             g.drawLine(x, 0, x, getHeight());
         }
 
@@ -92,12 +94,19 @@ public class BattleField extends JPanel {
     }
 
     private void drawO(Graphics g, int cellX, int cellY) {
+        ((Graphics2D) g).setStroke(new BasicStroke(2));
+        g.setColor(Color.MAGENTA);
+        g.drawOval(cellX * cellWidth, cellY * cellHeight,
+                cellWidth, cellHeight);
     }
 
     private void drawX(Graphics g, int cellX, int cellY) {
-        ((Graphics2D) g).setStroke(new BasicStroke(5));//ширина линии
-        g.setColor(Color.BLUE);
+        ((Graphics2D) g).setStroke(new BasicStroke(2));//ширина линии
+        g.setColor(Color.WHITE);
         g.drawLine(cellX * cellWidth, cellY * cellHeight,
                 (cellX + 1) * cellWidth, (cellY + 1) * cellHeight);
+        g.drawLine((cellX + 1) * cellWidth, (cellY) * cellHeight,
+                (cellX) * cellWidth, (cellY + 1) * cellHeight);
+
     }
 }

@@ -24,7 +24,11 @@ public class GameWindow extends JFrame {
 
         JPanel jPanel = new JPanel(new GridLayout(1, 2));
         JButton buttonNewGame = new JButton("Start new game");
+        buttonNewGame.setBackground(Color.RED);
+        buttonNewGame.setForeground(Color.WHITE);
         JButton buttonExit = new JButton("Exit");
+        buttonExit.setBackground(Color.BLUE);
+        buttonExit.setForeground(Color.WHITE);
 
         jPanel.add(buttonNewGame);
         jPanel.add(buttonExit);
